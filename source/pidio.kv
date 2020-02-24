@@ -1,0 +1,71 @@
+<MainButton@Button>:
+	font_size: 32
+
+<PiDioGrid>:
+
+	GridLayout:
+		id: main
+		rows: 2
+		font_size: 48
+		padding: 10
+		spacing: 10
+
+		BoxLayout:
+			spacing: 10
+			MainButton:
+				text: 'Radio'
+				on_press: 
+					root.manager.transition.direction = 'down'
+					root.manager.transition.duration = 1
+					root.manager.current = 'radio_screen'
+			MainButton:
+				text: 'Bluetooth'
+				on_press: main.Bluetooth()
+			MainButton:
+				text: 'AndroidAuto'
+				on_press: main.AndIoPlay()
+
+		BoxLayout:
+			spacing: 10
+			MainButton:
+				text: 'Settings'
+				on_press: main.Settings()
+			MainButton:
+				text: 'USB'
+				on_press: main.USB()
+			MainButton:
+				text: 'Auxillary'
+				on_press: main.Auxillary()
+
+<RadioScreen>
+	GridLayout:
+		id: radio_scr
+		rows: 2
+		font_size: 32
+
+		BoxLayout:
+			cols: 3
+			GridLayout:
+				rows: 3
+				MainButton:
+					text: '1'
+				MainButton:
+					text: '2'
+				MainButton:
+					text: '3'
+			BoxLayout:
+				Label:
+					text: '107.5'
+			GridLayout:
+				rows: 3
+				MainButton:
+					text: '4'
+				MainButton:
+					text: '5'
+				MainButton:
+					text: '6'
+
+		BoxLayout:
+			MainButton:
+				text: 'Radio'
+				on_press: root.manager.current = 'pidio_screen'
