@@ -32,6 +32,17 @@ class RadioScreen(Screen):
         super(RadioScreen, self).__init__(**kwargs)
         Config = conf.Config()
         rad = Config.ch_load()
+        #logger.debug(f'Loading Radio Info: {rad}')
+        self.ids.ch_one.text = rad['stat_one']
+        self.ids.ch_two.text = rad['stat_two']
+        self.ids.ch_three.text = rad['stat_three']
+        self.ids.ch_four.text = rad['stat_four']
+        self.ids.ch_five.text = rad['stat_five']
+        self.ids.ch_six.text = rad['stat_six']
+        self.ids.cur_stat.text = rad['cur_stat']
+
+    def change_ch(self, station):
+        self.ids.cur_stat.text = station.text
         
 
 class PiDio(App):        
@@ -75,5 +86,4 @@ class PiDio(App):
         return scr_manage
 
 if __name__ == '__main__':
-
     PiDio().run()

@@ -35,8 +35,9 @@ class Config():
         Warning level log with continued application status.
         '''
         l = logging.getLogger('PiDioApp.Config.Ch_Load')
-        def_ch = {'stat_1': '98.5', 'stat_2': '98.5', 'stat_3': '98.5',
-                  'stat_4': '98.5', 'stat_5': '98.5', 'stat_6': '98.5'}
+        def_ch = {'stat_one': '98.5', 'stat_two': '98.5', 'stat_three': '98.5',
+                  'stat_four': '98.5', 'stat_five': '98.5', 'stat_six': '98.5',
+                  'cur_stat': '98.5'}
 
         try:
             l.debug('Opening data.conf.') 

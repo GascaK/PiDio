@@ -48,24 +48,42 @@
 			GridLayout:
 				rows: 3
 				MainButton:
+					id: ch_one
 					text: '1'
+					on_press: root.change_ch(ch_one)
 				MainButton:
+					id: ch_two
 					text: '2'
+					on_press: root.change_ch(ch_two)
 				MainButton:
+					id: ch_three
 					text: '3'
+					on_press: root.change_ch(ch_three)
 			BoxLayout:
 				Label:
-					text: '107.5'
+					id: cur_stat
+					text: 'Err'
 			GridLayout:
 				rows: 3
 				MainButton:
+					id: ch_four
 					text: '4'
+					on_press: root.change_ch(ch_four)
 				MainButton:
+					id: ch_five
 					text: '5'
+					on_press: root.change_ch(ch_five)
 				MainButton:
+					id: ch_six
 					text: '6'
+					on_press: root.change_ch(ch_six)
 
 		BoxLayout:
-			MainButton:
-				text: 'Radio'
-				on_press: root.manager.current = 'pidio_screen'
+			GridLayout:
+				rows: 3
+				cols: 3
+				Label:
+					text: 'Volume'
+				MainButton:
+					text: 'Radio'
+					on_press: root.manager.current = 'pidio_screen'
